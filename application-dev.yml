@@ -1,0 +1,15 @@
+server:
+  port: 9080
+
+proxyTable:
+  /api:
+    target: http://localhost:8081
+    changeOrigin: true
+    ws: false
+    pathRewrite:
+      ^/api: ''
+  /websocket:
+    # target: 'http://10.128.97.188:9091',
+    target: http://localhost:8082
+    changeOrigin: true
+    ws: true
